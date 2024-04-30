@@ -12,6 +12,7 @@ Execute the backend locally with
 
 ```
 cd donations-back
+npm install
 npm start
 ```
 
