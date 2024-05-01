@@ -5,6 +5,8 @@ class DonationService {
     this.donations = data;
   }
 
+  addDonation = (donation) => this.donations.push(donation);
+
   getAllDonations = () => this.donations;
 
   getDonation = (id) => {
