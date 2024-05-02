@@ -1,11 +1,11 @@
 import crypto from 'crypto';
 
 class DonationObject {
-  constructor(firstName, lastName, utcTime, amount, thankYouComment, isAnonymous, companyName) {
+  constructor(firstName, lastName, createdAtUtc, amount, thankYouComment, isAnonymous, companyName) {
     this.id = crypto.randomUUID();
     this.firstName = firstName;
     this.lastName = lastName;
-    this.createdAtUtc = utcTime;
+    this.createdAtUtc = createdAtUtc;
     this.amount = amount;
     this.thankYouComment = thankYouComment;
     this.isAnonymous = isAnonymous;
@@ -28,11 +28,29 @@ class DonationObject {
 }
 
 class TransactionWithDonationObject {
-  constructor(type, refundedAmount, firstName, lastName, utcTime, amount, thankYouComment, isAnonymous, companyName) {
+  constructor(
+    type,
+    refundedAmount,
+    firstName,
+    lastName,
+    createdAtUtc,
+    amount,
+    thankYouComment,
+    isAnonymous,
+    companyName,
+  ) {
     this.id = crypto.randomUUID();
     this.type = type;
     this.refundedAmount = refundedAmount;
-    this.donation = new DonationObject(firstName, lastName, utcTime, amount, thankYouComment, isAnonymous, companyName);
+    this.donation = new DonationObject(
+      firstName,
+      lastName,
+      createdAtUtc,
+      amount,
+      thankYouComment,
+      isAnonymous,
+      companyName,
+    );
   }
 
   toJSON() {

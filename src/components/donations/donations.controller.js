@@ -6,14 +6,23 @@ class DonationController {
   }
 
   createDonation = (req, res) => {
-    const { type, refundedAmount, firstName, lastName, utcTime, amount, thankYouComment, isAnonymous, companyName } =
-      req.body;
+    const {
+      type,
+      refundedAmount,
+      firstName,
+      lastName,
+      createdAtUtc,
+      amount,
+      thankYouComment,
+      isAnonymous,
+      companyName,
+    } = req.body;
     const donation = new TransactionWithDonationObject(
       type,
       refundedAmount,
       firstName,
       lastName,
-      utcTime,
+      createdAtUtc,
       amount,
       thankYouComment,
       isAnonymous,
