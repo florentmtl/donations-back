@@ -35,6 +35,12 @@ class DonationController {
     return res.status(200).send(this.donationService.getAllDonations());
   };
 
+  getDonations = (req, res) => {
+    const { rowsPerPage, pageNum } = req.query;
+    console.log(req.query);
+    return res.status(200).send(this.donationService.getDonations(rowsPerPage, pageNum));
+  };
+
   getDonation = (req, res) => {
     const { id } = req.params;
     return res.status(200).send(this.donationService.getDonation(id));

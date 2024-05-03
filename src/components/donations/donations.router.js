@@ -8,7 +8,7 @@ class DonationRouter {
   getRouter() {
     const router = express.Router();
     router.route('/:id').get(this.donationController.getDonation);
-    router.route('/').get(this.donationController.getAllDonations);
+    router.route('/').get(this.donationController.getDonations);
     router.route('/').post(this.donationController.createDonation);
     return router;
   }
